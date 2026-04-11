@@ -1,0 +1,95 @@
+{
+  "project_name": "Luna Period Tracker",
+  "theme": "light",
+  "archetype": "3 (Pastel & Soft) mixed with Neo-Brutalist Softness (Neumorphism / Glassmorphism)",
+  "color_palette": {
+    "background": "#FDF9F9",
+    "surface": "#FFFFFF",
+    "surface_glass": "rgba(255, 255, 255, 0.7)",
+    "primary": "#F2A7B8",
+    "primary_gradient": "linear-gradient(135deg, #F2A7B8 0%, #E8DFF5 100%)",
+    "secondary": "#FCD5CE",
+    "text_primary": "#2D2A2B",
+    "text_secondary": "#6A6063",
+    "accent_ovulation": "#D8E2DC",
+    "accent_period": "#F4B8C8",
+    "border_subtle": "#F2EBEB",
+    "error_alert": "#E57373"
+  },
+  "typography": {
+    "headings": {
+      "family": "Outfit, sans-serif",
+      "weights": ["300", "400", "500", "600"],
+      "classes": "font-sans tracking-tight text-gray-900"
+    },
+    "body": {
+      "family": "Manrope, sans-serif",
+      "weights": ["400", "500", "600"],
+      "classes": "font-sans leading-relaxed text-gray-600"
+    }
+  },
+  "layout_spacing": {
+    "app_container": "max-w-md mx-auto min-h-[100dvh] relative overflow-hidden bg-[#FDF9F9] shadow-2xl sm:rounded-3xl sm:border sm:border-gray-200",
+    "section_padding": "p-6",
+    "card_radius": "rounded-[32px]",
+    "button_radius": "rounded-full",
+    "gap": "gap-4 lg:gap-6"
+  },
+  "surfaces_and_shadows": {
+    "card": {
+      "style": "bg-white shadow-[0_8px_30px_rgba(242,167,184,0.1)] border border-white/50 backdrop-blur-sm"
+    },
+    "glass_header": {
+      "style": "bg-white/80 backdrop-blur-xl border-b border-[#F2EBEB] z-50 sticky top-0"
+    },
+    "bottom_nav": {
+      "style": "bg-white/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(242,167,184,0.08)] border-t border-white fixed bottom-0 w-full max-w-md"
+    }
+  },
+  "components": {
+    "progress_ring": {
+      "description": "SVG stroke with linear gradient from pink to lavender. Used on the home dashboard to show cycle progress.",
+      "stroke_width": 12,
+      "classes": "drop-shadow-[0_4px_12px_rgba(242,167,184,0.3)]"
+    },
+    "calendar": {
+      "day_selected": "bg-[#F2A7B8] text-white font-medium rounded-full shadow-md",
+      "day_ovulation": "bg-[#D8E2DC] text-[#2D2A2B] rounded-full",
+      "day_period": "bg-pink-100 text-[#2D2A2B] rounded-full border border-pink-200"
+    },
+    "mood_pill": {
+      "default": "bg-white border border-[#F2EBEB] text-[#6A6063] rounded-2xl px-4 py-3 flex flex-col items-center gap-2 shadow-sm transition-all",
+      "active": "bg-[#FCD5CE]/30 border border-[#F2A7B8] text-[#2D2A2B] rounded-2xl px-4 py-3 flex flex-col items-center gap-2 shadow-sm scale-105"
+    },
+    "passcode_input": {
+      "dot_empty": "w-4 h-4 rounded-full border-2 border-[#F2A7B8]/40",
+      "dot_filled": "w-4 h-4 rounded-full bg-[#F2A7B8] shadow-[0_0_8px_rgba(242,167,184,0.6)]"
+    }
+  },
+  "motion_and_interactions": {
+    "hover_state": "hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-out",
+    "tap_state": "active:scale-95 transition-transform",
+    "page_transition": "framer-motion animate-in fade-in slide-in-from-bottom-4 duration-500"
+  },
+  "icons_and_assets": {
+    "library": "@phosphor-icons/react",
+    "style": "weight='duotone' for active states, 'regular' for inactive",
+    "install_command": "yarn add @phosphor-icons/react"
+  },
+  "media_urls": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/26559582/pexels-photo-26559582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Abstract composition featuring geometric glass-like structures with soft pink and peach hues. Use as a soft blurred background for the 'AI Health Insights' card or the top header area of the dashboard."
+    }
+  },
+  "specific_instructions_for_main_agent": [
+    "Ensure all interactive elements have data-testid attributes (e.g., data-testid='calendar-day-14', data-testid='log-symptoms-button').",
+    "The app must feel like a premium mobile app. Use the layout_spacing.app_container classes (max-w-md mx-auto) to constrain the web app width so it looks like a mobile interface centered on desktop.",
+    "For the circular progress ring, build a custom SVG component using stroke-dasharray and stroke-dashoffset to dynamically show cycle progress. Add a subtle shadow.",
+    "Use Phosphor icons. For mood and symptoms, use expressive icons like Smiley, SmileySad, Drop, Bandage, Lightning, etc., in Duotone.",
+    "The Passcode screen should be a full-screen overlay with a frosted glass background if triggered over content, or a clean white background if it's the initial load.",
+    "Do NOT use HTML <input type='date'> for the calendar. Build a custom grid calendar using grid-cols-7 to allow custom highlighting of period and ovulation days.",
+    "The Settings toggle should use Shadcn Switch but styled with the primary pink color instead of default black/white.",
+    "Never use pure black or pure gray. Use the defined text_primary and text_secondary colors."
+  ]
+}
